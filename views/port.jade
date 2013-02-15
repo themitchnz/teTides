@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1= title
+
+    //h2 Weather
+    //img(src='#{apiWeather.icon_url}')
+    //p Current: #{apiWeather.weather}
+    //p Current Temp: #{apiWeather.temp_c} °C
+    //p Relative Humidity: #{apiWeather.relative_humidity}
+    //p Wind Direction: From the #{apiWeather.wind_dir} at #{apiWeather.wind_kph} kph
+    //p UV Rating: #{apiWeather.UV}
+
+    h3 #{title} Tides for #{now}:
+
+    h4 Todays tides are at:
+    
+    p
+      li #{tide.tide1} Tide Height: #{tide.tide1Height}
+      li #{tide.tide2} Tide Height: #{tide.tide2Height}
+      li #{tide.tide3} Tide Height: #{tide.tide3Height}
+      if tide.tide4 != ''
+        li #{tide.tide4} Tide Height: #{tide.tide4Height}
+
+    p
+      li: a(href='../') Home
+      li: a(href='/#{title}/csv') Download CSV
+      li: a(href='/#{title}/json') Download JSON

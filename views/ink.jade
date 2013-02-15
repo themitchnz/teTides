@@ -1,0 +1,90 @@
+!!! 5
+html(lang='en')
+  head
+    link(rel='stylesheet', href='http://css.ink.sapo.pt/v1/css/ink.css')
+    link(rel='stylesheet', href='/stylesheets/mine.css')
+    script(src='http://js.sapo.pt/Bundles/Ink-v1.js')
+
+    body
+      header#topbar
+        .ink-container
+          nav.ink-navigation.ink-collapsible
+            ul.horizontal.menu.blue.flat
+              li
+                #tideLogo
+                  i.icon-tint(style='color: #FFF')
+                  strong Kiwi Tides
+              li.active: a(href='#') Home
+              li: a(href='#') About
+              li: a(href='#') Developers
+              li: a(href='#') Contact
+        .hr
+        .ink-container
+          .ink-l80
+            h1#title NZ Tides
+            p#titleLead Providing you with the day's tides for all major harbours and marine centres throughout New Zealand
+          .ink-l20.center
+            i.icon-tint.icon-title
+
+      #mainContent.ink-container
+        .ink-row.ink-vspace
+          .ink-l33
+            .ink-gutter
+              i.icon-tint(style='font-size: 60px')
+              h3 Tides
+              p Find today's tides for your local area in an easy to read, human format
+          .ink-l33
+            .ink-gutter
+              i.icon-umbrella(style='font-size: 60px')
+              h3 Weather
+              p
+                | Get an up to date weather report so you know whether it's worth leaving the house
+          .ink-l33
+            .ink-gutter
+              i.icon-wrench(style='font-size: 60px')
+              h3 API
+              p An API is fully accessible providing you with CSV and JSON data for each area
+        .ink-section.well
+          h3.ink-vspace Select a port to view todays tides
+          .ink-l25
+            h6 Upper North Island
+            ul.unstyled
+              li: a(href='/Auckland') Auckland
+              li: a(href='/MarsdenPoint') Marsden Point
+              li: a(href='/Onehunga') Onehunga
+              li: a(href='/Tauranga') Tauranga
+          .ink-l25
+            h6 Lower North Island
+            ul.unstyled
+              li: a(href='/Wellington') Wellington
+              li: a(href='/Taranaki') Taranaki
+              li: a(href='/Gisborne') Gisborne
+              li: a(href='/Napier') Napier
+          .ink-l25
+            h6 Upper South Island
+            ul.unstyled
+              li: a(href='/Nelson') Nelson
+              li: a(href='/Lyttleton') Lyttleton
+              li: a(href='/Westport') Westport
+              li: a(href='/Picton') Picton
+          .ink-l25
+            h6 Lower South Island
+            ul.unstyled
+              li: a(href='/Bluff') Bluff
+              li: a(href='/Timaru') Timaru
+              li: a(href='/PortChalmers') Port Chalmers
+              li: a(href='/Dunedin') Dunedin
+
+        .ink-l100
+          .ink-alert.info
+            button#disclaimer.ink-close ×
+            p
+              b Disclaimer:
+              |  The tide predictions on this website are not official tide tables as specified in Maritime Rules Part 25 Nautical Charts and Publications (pursuant to Section 36 of the Maritime Transport Act 1994).
+      footer#footer
+        .ink-container
+          p.copyright
+            | All rights reserved.
+            | Kiwi Tides by James Mitchell
+
+

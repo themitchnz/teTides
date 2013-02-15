@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Select a Port:
+  each port in ports
+    p
+      a(href='/#{port}') #{port}

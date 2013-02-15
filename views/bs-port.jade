@@ -1,0 +1,107 @@
+!!!
+html
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js')
+    script(type='text/javascript')
+      $(document).ready(function(){
+      $('body').jKit();
+      });
+   
+    style(type='text/css')
+      body { padding-top: 10px; padding-bottom: 40px; }
+      .sidebar-nav { padding: 9px 0; } 
+
+  body
+    div.container-narrow
+      div.masthead
+        ul.nav.nav-pills.pull-right
+          li
+            a(href='/') Home
+          li
+            a(href="#") About
+          li
+            a(href="#") Developer
+        
+        h3.muted New Zealand Tides
+
+      div
+        ul(data-jkit='[ticker]')
+          li Sunrise: #{yql.astronomy.sunrise}
+          li Sunset: #{yql.astronomy.sunset}
+          li Relative Humidity: #{yql.atmosphere.humidity}%
+          li Wind Speed: #{yql.wind.speed} #{yql.units.speed}
+          li Wind Direction: #{yql.wind.direction}°
+          li Current Conditions: #{yql.item.forecast[0].text}
+          li Current Temperature: #{yql.item.forecast[0].temp}°C
+          li Max Temperature: #{yql.item.forecast[0].high}°C
+          li Min Temperature: #{yql.item.forecast[0].low}°C
+
+      hr
+
+      div.jumbotron
+        h1 #{title}
+        p.lead #{now}
+      
+      hr
+
+      p.lead Todays Tides:
+
+      table.table.table-striped.table-bordered.table-condensed
+        thead
+          tr
+            th Tide
+            th Time
+            th Height
+     
+        tbody
+          //- setup 1st tide 
+          tr
+            if tide1 == 'high'
+              td High
+            else
+              td Low
+            td #{tide.tide1} (#{tide1Human})
+            td #{tide.tide1Height}
+
+          //- Setup 2nd tide - opposite to 1st
+          tr
+            if tide1 == 'high'
+              td Low
+            else
+              td High
+            td #{tide.tide2} (#{tide2Human})
+            td #{tide.tide2Height}
+
+          //- setup 3rd tide 
+          tr
+            if tide1 == 'high'
+              td High
+            else
+              td Low
+            td #{tide.tide3} (#{tide3Human})
+            td #{tide.tide3Height}
+          
+          if tide.tide4 != ''
+            //- Setup 4th tide - opposite to 1st
+            tr
+              if tide1 == 'high'
+                td Low
+              else
+                td High
+              td #{tide.tide4} (#{tide4Human})
+              td #{tide.tide4Height}
+
+      hr
+
+      footer
+        p.pull-left &copy; New Zealand Tides
+        p.pull-right Tide data provided from 
+          a(href='http://www.linz.govt.nz/hydro/tidal-info/tide-tables') LINZ
+
+    script(type='text/javascript', src='/javascripts/bootstrap.min.js')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(type='text/javascript', src='/javascripts/jquery.jkit.1.1.15.min.js')
