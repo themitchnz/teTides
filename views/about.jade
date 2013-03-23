@@ -1,0 +1,35 @@
+!!! 5
+html(lang='en')
+  head
+    link(rel='stylesheet', href='/stylesheets/main-min.css')
+
+    body
+      .wrapper
+        header#topbar
+          .ink-container
+            nav.ink-navigation.ink-collapsible
+              ul.horizontal.menu.blue.flat
+                li
+                  #tideLogo
+                    i.icon-tint(style='color: #FFF')
+                    strong Te Tides
+                li: a(href='./') Home
+                li: a(href='#') About
+                li: a(href='#') Developers
+                li: a(href='#') Contact
+          .hr
+          .ink-container
+            .ink-l80
+              h1#title #{title}
+              p#titleLead About
+            .ink-l20.center.ink-for-l
+              i.icon-tint.icon-title
+        .push
+
+      footer#footer.ink-vspace
+        .ink-container
+          p.copyright
+            | All rights reserved.
+            | Kiwi Tides by James Mitchell
+
+    script(async src='/javascripts/Ink-v1.js')

@@ -135,7 +135,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Ubuntu_monospaced, serif;
+  font-family: serif;
   font-size: 1em;
 }
 /*
@@ -348,7 +348,7 @@ table {
   text-shadow: none;
 }
 #ink #text .ink-font-stack {
-  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 body {
   background: #f7f7f7;
@@ -1958,7 +1958,7 @@ th {
 }
 body {
   color: #555555;
-  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 a {
   color: #0069d6;
@@ -2019,7 +2019,7 @@ p {
 }
 input,
 textarea {
-  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:  'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #666;
 }
 h1 small,
@@ -2157,7 +2157,7 @@ hr {
   font-weight: bold;
 }
 .ink-label {
-  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 0.2em 0.5em;
   text-transform: uppercase;
   font-weight: bold;
@@ -3452,6 +3452,8 @@ ul.icons li .icon-large:before {
 .icon-user-md:before {
   content: "\f200";
 }
+
+/*
 form.ink-form fieldset {
   border: none;
   margin-bottom: 1.5em;
@@ -3776,6 +3778,8 @@ form.ink-form.block .ink-mini-input {
   width: 5em;
   margin-right: 0.6em;
 }
+*/
+
 table.ink-table {
   width: 100%;
   border-collapse: collapse;
@@ -3834,7 +3838,10 @@ table.ink-table.ink-bordered tbody tr td {
 table.ink-table.ink-bordered tbody tr td:first-child {
   border-left: none;
 }
+
+
 /* Geral */
+/*
 .ink-gallery {
   max-width: 600px;
   width: 100%;
@@ -3917,7 +3924,10 @@ table.ink-table.ink-bordered tbody tr td:first-child {
   -ms-transition-delay: 0;
   transition-delay: 0;
 }
+*/
 /* Typography */
+
+/*
 .ink-gallery .article_text.example1 {
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -3948,6 +3958,7 @@ table.ink-table.ink-bordered tbody tr td:first-child {
   margin: 0;
 }
 /* Gallery -  Thumbs bottom */
+/*
 .ink-gallery .stage {
   height: 400px;
   position: relative;
@@ -4050,7 +4061,9 @@ table.ink-table.ink-bordered tbody tr td:first-child {
 .ink-gallery .thumbs a.previous:hover {
   border-right: 10px solid rgba(255, 255, 255, 0.9);
 }
+*/
 /* Gallery - Thumbs right */
+/*
 .ink-gallery.rightNav .stage {
   width: 400px;
   float: left;
@@ -4070,7 +4083,9 @@ table.ink-table.ink-bordered tbody tr td:first-child {
   display: block;
   overflow: hidden;
 }
+*/
 /* Modal box */
+/*
 .ink-modal {
   height: 400px;
   width: 600px;
@@ -4095,8 +4110,10 @@ table.ink-table.ink-bordered tbody tr td:first-child {
   color: #ffffff;
   z-index: 1;
 }
+*/
 /* Tabs */
 /* Sortable list */
+/*
 .ink-sortable-list li {
   margin: 0;
   border-bottom: 1px solid #CCC;
@@ -4117,7 +4134,9 @@ table.ink-table.ink-bordered tbody tr td:first-child {
 .ink-sortable-list .ink-label {
   margin: 0 .8em;
 }
+*/
 /* Tree view */
+/*
 ul.ink-tree-view,
 ul.ink-tree-view ul {
   list-style-type: none;
@@ -4127,7 +4146,9 @@ ul.ink-tree-view ul {
   background: none;
   margin-left: -1.4em;
 }
+*/
 /* Date picker */
+/*
 .sapo_component_datepicker {
   border-radius: 4px;
   text-align: center;
@@ -4251,7 +4272,9 @@ ul.ink-tree-view ul {
 .sapo_cal_month_selector {
   display: none;
 }
+*/
 /* Progess bars */
+/*
 .ink-progress-bar {
   height: 26px;
   margin-bottom: 20px;
@@ -4361,6 +4384,8 @@ ul.ink-tree-view ul {
   background: -ms-linear-gradient(top, #4d4d4d 0%, #000000 150%);
   background: linear-gradient(top, #4d4d4d 0%, #000000 150%);
 }
+*/
+/*
 @font-face {
   font-family: 'Ubuntu';
   src: url('../font/ubuntu-b-webfont.eot');
@@ -4452,6 +4477,8 @@ ul.ink-tree-view ul {
   font-weight: normal;
   font-style: italic;
 }
+
+*/
 footer {
   min-height: 8em;
   border-top: 1px solid #CCC;

@@ -1,28 +1,118 @@
-extends layout
+!!! 5
+html(lang='en')
+  head
+    link(rel='stylesheet', href='/stylesheets/main-min.css')
 
-block content
-  h1= title
+    body
+      header#topbar
+        .ink-container
+          nav.ink-navigation.ink-collapsible
+            ul.horizontal.menu.blue.flat
+              li
+                #tideLogo
+                  i.icon-tint(style='color: #FFF')
+                  strong Te Tides
+              li: a(href='./') Home
+              li: a(href='#') About
+              li: a(href='#') Developers
+              li: a(href='#') Contact
+        .hr
+        .ink-container
+          .ink-l80
+            h1#title #{title}
+            p#titleLead #{title}'s Tides for #{now}:
+          .ink-l20.center.ink-for-l
+            i.icon-tint.icon-title
 
-    //h2 Weather
-    //img(src='#{apiWeather.icon_url}')
-    //p Current: #{apiWeather.weather}
-    //p Current Temp: #{apiWeather.temp_c} °C
-    //p Relative Humidity: #{apiWeather.relative_humidity}
-    //p Wind Direction: From the #{apiWeather.wind_dir} at #{apiWeather.wind_kph} kph
-    //p UV Rating: #{apiWeather.UV}
-
-    h3 #{title} Tides for #{now}:
-
-    h4 Todays tides are at:
+    .ink-container
+      .ink-vspace.ink-row
+        .ink-l50.ink-m100.ink-s100
+          h4 Todays tides are at:
     
-    p
-      li #{tide.tide1} Tide Height: #{tide.tide1Height}
-      li #{tide.tide2} Tide Height: #{tide.tide2Height}
-      li #{tide.tide3} Tide Height: #{tide.tide3Height}
-      if tide.tide4 != ''
-        li #{tide.tide4} Tide Height: #{tide.tide4Height}
+          table.ink-table.ink-zebra
+              thead
+                tr
+                  th Tide
+                  th Time
+                  th Height
+     
+              tbody
+                //- setup 1st tide 
+                tr
+                  if tide1 == 'high'
+                    td High
+                  else
+                    td Low
+                  td #{tide1Time}  (#{tide1Human})
+                  td #{tide.tide1Height}m
+  
+                //- Setup 2nd tide - opposite to 1st
+                tr
+                  if tide1 == 'high'
+                    td Low
+                  else
+                    td High
+                  td #{tide2Time}  (#{tide2Human})
+                  td #{tide.tide2Height}m
 
-    p
-      li: a(href='../') Home
-      li: a(href='/#{title}/csv') Download CSV
-      li: a(href='/#{title}/json') Download JSON
+                //- setup 3rd tide 
+                tr
+                  if tide1 == 'high'
+                    td High
+                  else
+                    td Low
+                  td #{tide3Time}  (#{tide3Human})
+                  td #{tide.tide3Height}m
+            
+                if tide.tide4 != ''
+                  //- Setup 4th tide - opposite to 1st
+                  tr
+                    if tide1 == 'high'
+                      td Low
+                    else
+                      td High
+                    td #{tide4Time}  (#{tide4Human})
+                    td #{tide.tide4Height}m
+
+        .ink-l50.ink-m100.ink-s100
+          .ink-gutter
+            h4 Today's weather:
+    
+            table.ink-table.ink-zebra
+              thead
+                tr
+                  th(colspan="4") Updated: #{weather.wDate}
+              
+              tbody
+                //- setup 1st tide 
+                tr
+                  td: em Weather:
+                  td: b #{weather.wText}
+                  td: em Current Temp:
+                  td: b #{weather.wTemp}
+                tr
+                  td: em High:
+                  td: b #{weather.wHigh}
+                  td: em Low:
+                  td: b #{weather.wLow}
+                tr
+                  td: em Sunrise:
+                  td: b #{weather.wSunrise}
+                  td: em Sunset:
+                  td: b #{weather.wSunset}
+                tr
+                  td: em Wind Speed:
+                  td: b #{weather.wWindSpeed}
+                  td: em Wind Direction:
+                  td: b #{weather.wWindDirection}
+
+            p.note(align="right")
+              em weather data from !Yahoo
+
+    footer#footer.ink-vspace
+      .ink-container
+        p.copyright
+          | All rights reserved.
+          | Kiwi Tides by James Mitchell
+
+    script(async src='/javascripts/Ink-v1.js')
