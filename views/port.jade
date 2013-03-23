@@ -4,111 +4,112 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/main-min.css')
 
     body
-      header#topbar
-        .ink-container
-          nav.ink-navigation.ink-collapsible
-            ul.horizontal.menu.blue.flat
-              li
-                #tideLogo
-                  i.icon-tint(style='color: #FFF')
-                  strong Te Tides
-              li: a(href='./') Home
-              li: a(href='#') About
-              li: a(href='#') Developers
-              li: a(href='#') Contact
-        .hr
-        .ink-container
-          .ink-l80
-            h1#title #{title}
-            p#titleLead #{title}'s Tides for #{now}:
-          .ink-l20.center.ink-for-l
-            i.icon-tint.icon-title
-
-    .ink-container
-      .ink-vspace.ink-row
-        .ink-l50.ink-m100.ink-s100
-          h4 Todays tides are at:
-    
-          table.ink-table.ink-zebra
-              thead
-                tr
-                  th Tide
-                  th Time
-                  th Height
-     
-              tbody
-                //- setup 1st tide 
-                tr
-                  if tide1 == 'high'
-                    td High
-                  else
-                    td Low
-                  td #{tide1Time}  (#{tide1Human})
-                  td #{tide.tide1Height}m
+      .wrapper
+        header#topbar
+          .ink-container
+            nav.ink-navigation.ink-collapsible
+              ul.horizontal.menu.blue.flat
+                li
+                  #tideLogo
+                    i.icon-tint(style='color: #FFF')
+                    strong Te Tides
+                li: a(href='./') Home
+                li: a(href='#') About
+                li: a(href='#') Developers
+                li: a(href='#') Contact
+          .hr
+          .ink-container
+            .ink-l80
+              h1#title #{title}
+              p#titleLead #{title}'s Tides for #{now}:
+            .ink-l20.center.ink-for-l
+              i.icon-tint.icon-title
   
-                //- Setup 2nd tide - opposite to 1st
-                tr
-                  if tide1 == 'high'
-                    td Low
-                  else
-                    td High
-                  td #{tide2Time}  (#{tide2Human})
-                  td #{tide.tide2Height}m
-
-                //- setup 3rd tide 
-                tr
-                  if tide1 == 'high'
-                    td High
-                  else
-                    td Low
-                  td #{tide3Time}  (#{tide3Human})
-                  td #{tide.tide3Height}m
-            
-                if tide.tide4 != ''
-                  //- Setup 4th tide - opposite to 1st
-                  tr
-                    if tide1 == 'high'
-                      td Low
-                    else
-                      td High
-                    td #{tide4Time}  (#{tide4Human})
-                    td #{tide.tide4Height}m
-
-        .ink-l50.ink-m100.ink-s100
-          .ink-gutter
-            h4 Today's weather:
+        .ink-container
+          .ink-vspace.ink-row
+            .ink-l50.ink-m100.ink-s100
+              h4 Todays tides are at:
+        
+              table.ink-table.ink-zebra
+                  thead
+                    tr
+                      th Tide
+                      th Time
+                      th Height
+         
+                  tbody
+                    //- setup 1st tide 
+                    tr
+                      if tide1 == 'high'
+                        td High
+                      else
+                        td Low
+                      td #{tide1Time}  (#{tide1Human})
+                      td #{tide.tide1Height}m
+                      
+                      //- Setup 2nd tide - opposite to 1st
+                    tr
+                      if tide1 == 'high'
+                        td Low
+                      else
+                        td High
+                      td #{tide2Time}  (#{tide2Human})
+                      td #{tide.tide2Height}m
     
-            table.ink-table.ink-zebra
-              thead
-                tr
-                  th(colspan="4") Updated: #{weather.wDate}
-              
-              tbody
-                //- setup 1st tide 
-                tr
-                  td: em Weather:
-                  td: b #{weather.wText}
-                  td: em Current Temp:
-                  td: b #{weather.wTemp}
-                tr
-                  td: em High:
-                  td: b #{weather.wHigh}
-                  td: em Low:
-                  td: b #{weather.wLow}
-                tr
-                  td: em Sunrise:
-                  td: b #{weather.wSunrise}
-                  td: em Sunset:
-                  td: b #{weather.wSunset}
-                tr
-                  td: em Wind Speed:
-                  td: b #{weather.wWindSpeed}
-                  td: em Wind Direction:
-                  td: b #{weather.wWindDirection}
-
-            p.note(align="right")
-              em weather data from !Yahoo
-
+                    //- setup 3rd tide 
+                    tr
+                      if tide1 == 'high'
+                        td High
+                      else
+                        td Low
+                      td #{tide3Time}  (#{tide3Human})
+                      td #{tide.tide3Height}m
+                
+                    if tide.tide4 != ''
+                      //- Setup 4th tide - opposite to 1st
+                      tr
+                        if tide1 == 'high'
+                          td Low
+                        else
+                          td High
+                        td #{tide4Time}  (#{tide4Human})
+                        td #{tide.tide4Height}m
+  
+            .ink-l50.ink-m100.ink-s100
+              .ink-gutter
+                h4 Today's weather:
+        
+                table.ink-table.ink-zebra
+                  thead
+                    tr
+                      th(colspan="4") Updated: #{weather.wDate}
+                
+                  tbody
+                    //- setup 1st tide 
+                    tr
+                      td: em Weather:
+                      td: b #{weather.wText}
+                      td: em Current Temp:
+                      td: b #{weather.wTemp}
+                    tr
+                      td: em High:
+                      td: b #{weather.wHigh}
+                      td: em Low:
+                      td: b #{weather.wLow}
+                    tr
+                      td: em Sunrise:
+                      td: b #{weather.wSunrise}
+                      td: em Sunset:
+                      td: b #{weather.wSunset}
+                    tr
+                      td: em Wind Speed:
+                      td: b #{weather.wWindSpeed}
+                      td: em Wind Direction:
+                      td: b #{weather.wWindDirection}
+  
+                p.note(align="right")
+                  em weather data from !Yahoo
+        .push
     footer#footer.ink-vspace
       .ink-container
         p.copyright
