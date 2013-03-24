@@ -6,6 +6,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     uglify: {
+      options: {
+      mangle: false
+    },
     	my_target: {
       		files: {
         		'public/javascripts/main-min.js': ['public/javascripts/Ink-v1.js']
