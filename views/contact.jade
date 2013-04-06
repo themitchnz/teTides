@@ -14,14 +14,14 @@ html(lang='en')
                     i.icon-tint(style='color: #FFF')
                     strong TidesNZ
                 li: a(href='./') Home
-                li.active: a(href='/about') About
+                li: a(href='/about') About
                 li: a(href='/developers') Developers
-                li: a(href='/contact') Contact
+                li.active: a(href='/contact') Contact
           .hr
           .ink-container
             .ink-l80
               h1#title #{title}
-              p#titleLead About
+              p#titleLead Contact
             .ink-l20.center.ink-for-l
               i.icon-tint.icon-title
         .push
@@ -30,6 +30,6 @@ html(lang='en')
         .ink-container
           p.copyright
             | All rights reserved.
-            | Tides NZ by James Mitchell
+            | TidesNZ by James Mitchell
 
     script(async src='/javascripts/Ink-v1.js')

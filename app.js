@@ -29,7 +29,9 @@ app.configure('development', function(){
 });
 
 app.get('/', router.index); //list of ports
-app.get('/about', router.about); //list of ports
+app.get('/about', router.about);
+app.get('/developers', router.developers); 
+app.get('/contact', router.contact); 
 app.get('/:name', router.getPort); //info for port
 //app.get('/:name/:date', getPort.getDate); //port info for specific day
 

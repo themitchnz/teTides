@@ -12,11 +12,11 @@ html(lang='en')
                 li
                   #tideLogo
                     i.icon-tint(style='color: #FFF')
-                    strong Te Tides
+                    strong TidesNZ
                 li: a(href='./') Home
-                li: a(href='#') About
-                li: a(href='#') Developers
-                li: a(href='#') Contact
+                li: a(href='/about') About
+                li: a(href='/developers') Developers
+                li: a(href='/contact') Contact
           .hr
           .ink-container
             .ink-l80
@@ -26,7 +26,7 @@ html(lang='en')
               i.icon-tint.icon-title
   
         .ink-container
-          .ink-vspace.ink-row
+          .ink-vspace
             .ink-l50.ink-m100.ink-s100
               h4 Todays tides are at:
         
@@ -44,7 +44,7 @@ html(lang='en')
                         td High
                       else
                         td Low
-                      td #{tide1Time}  (#{tide1Human})
+                      td: <b>#{tide1Time}</b>  (#{tide1Human})
                       td #{tide.tide1Height}m
                       
                       //- Setup 2nd tide - opposite to 1st
@@ -53,7 +53,7 @@ html(lang='en')
                         td Low
                       else
                         td High
-                      td #{tide2Time}  (#{tide2Human})
+                      td: <b>#{tide2Time}</b> (#{tide2Human})
                       td #{tide.tide2Height}m
     
                     //- setup 3rd tide 
@@ -62,7 +62,7 @@ html(lang='en')
                         td High
                       else
                         td Low
-                      td #{tide3Time}  (#{tide3Human})
+                      td: <b>#{tide3Time}</b>  (#{tide3Human})
                       td #{tide.tide3Height}m
                 
                     if tide.tide4 != ''
@@ -72,7 +72,7 @@ html(lang='en')
                           td Low
                         else
                           td High
-                        td #{tide4Time}  (#{tide4Human})
+                        td: <b>#{tide4Time}</b>  (#{tide4Human})
                         td #{tide.tide4Height}m
   
             .ink-l50.ink-m100.ink-s100
@@ -110,10 +110,10 @@ html(lang='en')
                 p.note(align="right")
                   em weather data from !Yahoo
         .push
-    footer#footer.ink-vspace
-      .ink-container
-        p.copyright
-          | All rights reserved.
-          | Kiwi Tides by James Mitchell
+      footer#footer.ink-vspace
+        .ink-container
+          p.copyright
+            | All rights reserved.
+            | TidesNZ by James Mitchell
 
-    script(async src='/javascripts/main-min.js')
+    script(async src='/javascripts/Ink-v1.js')

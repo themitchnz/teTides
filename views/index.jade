@@ -12,37 +12,42 @@ html(lang='en')
                 li
                   #tideLogo
                     i.icon-tint(style='color: #FFF')
-                    strong Te Tides
+                    strong TidesNZ
                 li.active: a(href='#') Home
                 li: a(href='/about') About
-                li: a(href='#') Developers
-                li: a(href='#') Contact
+                li: a(href='/developers') Developers
+                li: a(href='/contact') Contact
           .hr
           .ink-container
             .ink-l80
-              h1#title Te Tides
+              h1#title TidesNZ
               p#titleLead Providing you with today's tides for all major harbours and marine centres throughout New Zealand. Pretty choice eh!
             .ink-l20.center.ink-for-l
               i.icon-tint.icon-title
 
         #mainContent.ink-container
           .ink-row.ink-vspace
-            .ink-l33
+            .ink-l25
               .ink-gutter
                 i.icon-tint(style='font-size: 60px')
                 h3 Tides
                 p Find today's tides for your local area in an easy to read, human format
-            .ink-l33
+            .ink-l25
               .ink-gutter
                 i.icon-umbrella(style='font-size: 60px')
                 h3 Weather
                 p
                   | Get an up to date weather report so you know whether it's worth leaving the house
-            .ink-l33
+            .ink-l25
+              .ink-gutter
+                i.icon-twitter(style='font-size: 60px')
+                h3 Twitter
+                p Follow us on twitter to get the tides tweeted daily
+            .ink-l25
               .ink-gutter
                 i.icon-wrench(style='font-size: 60px')
                 h3 API
-                p The complete tide data available in several formats (CSV, JSON) via a simple and free API  
+                p The complete tide data available in several formats (CSV, JSON) via a simple and free API
           .ink-section.well
             h3.ink-vspace Select a port to view todays tides
             .ink-l25
@@ -79,12 +84,12 @@ html(lang='en')
               b Disclaimer:
               |  The tide predictions on this website are not official tide tables as specified in Maritime Rules Part 25 Nautical Charts and Publications (pursuant to Section 36 of the Maritime Transport Act 1994).
         .push   
-    footer#footer
-      .ink-container
-        p.copyright
-          | All rights reserved.
-          | Kiwi Tides by James Mitchell
+      footer#footer
+        .ink-container
+          p.copyright
+            | All rights reserved.
+            |TidesNZ by James Mitchell
 
-    script(async src='/javascripts/main-min.js')
+    script(async src='/javascripts/Ink-v1.js')
 
 
